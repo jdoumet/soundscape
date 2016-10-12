@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <link media="all" rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="container homepage-background">
+    <audio src="sounds/button%20fx.mp3" id="effect-soundPlayer" preload="auto"></audio>
+    <div class="main-content">
+        <div class="full-width">
+            <img src="images/header-02.png" class="top-title" />
+        </div>
+        <div class="full-width">
+            <h1 class="title-center top-title-1">And the case of the voiceless Blackbird</h1>
+        </div>
+        <div class="full-width homepage-graphic">
+            <img src="images/homepage_graphic.png" class="homepage-graphic-img" />
+            <div class="start-btn">
+                <a href="/quiz" class="start-btn-img"> <img src="images/start_button.png" /> </a>
+            </div>
+        </div>
+        <div class="full-width">
+            <p class="title-center bottom-description">Inspired by the sounds of the Jabal Moussa Biosphere Reserve</p>
+        </div>
+        <div class="full-width">
+            <a href="http://jabalmoussa.org/"><img src="images/JM_logo_color_500.png" class="bottom-logo" /></a>
+        </div>
+
+    </div>
+
+</div>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script>
+
+    $('.start-btn-img').on('click', function(e){
+
+        e.preventDefault();
+
+        effectPlayer = document.getElementById("effect-soundPlayer");
+        effectPlayer.src = "sounds/button fx.mp3";
+        effectPlayer.load();
+        effectPlayer.play();
+
+        setTimeout(function(){
+            window.location.href = "/quiz";
+        },500);
+    });
+
+</script>
+</body>
+</html>

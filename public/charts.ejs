@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+    <title>Inspector Goldfinch</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/shCore.css">
+    <link rel="stylesheet" type="text/css" href="css/statistics.css">
+    <style type="text/css" class="init">
+
+    </style>
+    <script type="text/javascript" language="javascript" src="js/jquery-3.0.0.min.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.min.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/shCore.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/statistics.js">
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" language="javascript" class="init">
+        $(document).ready(function() {
+            $('#user-table').DataTable({
+                "scrollX": true
+            } );
+        } );
+    </script>
+</head>
+<body class="dt-example dt-example-bootstrap">
+<div class="container-fluid">
+    <div class="statistics-container">
+        <section>
+            <h1><a href="/">Inspector Goldfinch</a> <span>users</span></h1>
+            <br />
+
+            <div class="row text-center">
+                <div class="col-md-6 text-center">
+                    <div id="chart-container1" class="text-center"></div>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <div id="chart-container2" class="text-center"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="chart-container3" class="text-center"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="chart-container4" class="text-center"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="chart-container5" class="text-center"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="chart-container6" class="text-center"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div id="chart-container7" class="text-center"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="text-center">
+        <a href="/statistics" >
+            <button class="btn btn-primary btn-lg">Go to Statistics Table</button>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var options = {
+        vAxis: {title: 'Average Try Numbers'},
+        hAxis: {title: 'Years of experience'},
+        width: 1200,
+        height: 600,
+        seriesType: 'bars',
+        series: {8: {type: 'line'}}
+    };
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load("current", {packages:['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawCharts);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawCharts() {
+
+        ageGroupForGuess1();
+        ageGroupForGuess2();
+        ageGroupForGuess3();
+        ageGroupForGuess4();
+        ageGroupForGuess5();
+        ageGroupForGuess6();
+        ageGroupForGuess7();
+
+    }
+
+    function ageGroupForGuess1(){
+        var dataArray = [<%- JSON.stringify(ageGroupForGuess1) %>];
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Age group');
+        data.addColumn('number', 'Trying Number');
+        data.addRows(dataArray[0]);
+
+        var options = {
+            title : 'Average Try Numbers by Age Group For Guess1',
+            vAxis: {title: 'Average Try Numbers'},
+            hAxis: {title: 'Years of experience'},
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none", alignment: "center" }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart-container1'));
+        chart.draw(data, options);
+    }
+
+    function ageGroupForGuess2(){
+        var dataArray = [<%- JSON.stringify(surveyForGuess1) %>];
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Survey Answers');
+        data.addColumn('number', 'Numbers');
+        data.addRows(dataArray[0]);
+
+        var options = {
+            title : 'Survey Answers For Guess1',
+            vAxis: {title: 'Survey Answers'},
+            hAxis: {title: 'Numbers'},
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart-container2'));
+        chart.draw(data, options);
+    }
+
+    function ageGroupForGuess3(){
+        var dataArray = [<%- JSON.stringify(numberForEachBirds) %>];
+
+        var data = new google.visualization.arrayToDataTable(dataArray[0]);
+
+        var options = {
+            title : 'Average number of tries for each bird vs Age Group',
+            vAxis: {title: 'Average number of tries'},
+            hAxis: {title: 'Age Group'},
+            width: 1200,
+            height: 600,
+            seriesType: 'bars',
+            series: {8: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart-container3'));
+        chart.draw(data, options);
+    }
+    function ageGroupForGuess4(){
+        var dataArray = [<%- JSON.stringify(surveyForEachBirds) %>];
+
+        var data = new google.visualization.arrayToDataTable(dataArray[0]);
+
+        var options = {
+            title : 'Survey number vs Age Group',
+            vAxis: {title: 'Survey Number'},
+            hAxis: {title: 'Age Group'},
+            width: 1200,
+            height: 600,
+            seriesType: 'bars',
+            series: {8: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart-container4'));
+        chart.draw(data, options);
+    }
+
+    function ageGroupForGuess5(){
+        var dataArray = [<%- JSON.stringify(instrumentExpWithTryNumbers) %>];
+
+        var data = new google.visualization.arrayToDataTable(dataArray[0]);
+        options.title = "Years of playing musical instrument vs Number of tries for each bird";
+        var chart = new google.visualization.ComboChart(document.getElementById('chart-container5'));
+        chart.draw(data, options);
+    }
+
+    function ageGroupForGuess6(){
+        var dataArray = [<%- JSON.stringify(musicTheoryExpWithTryNumbers) %>];
+
+        var data = new google.visualization.arrayToDataTable(dataArray[0]);
+        options.title = "Years of music theory experience vs Number of tries for each bird";
+        var chart = new google.visualization.ComboChart(document.getElementById('chart-container6'));
+        chart.draw(data, options);
+    }
+
+    function ageGroupForGuess7(){
+        var dataArray = [<%- JSON.stringify(birdWatchingExpWithTryNumbers) %>];
+
+        var data = new google.visualization.arrayToDataTable(dataArray[0]);
+        options.title = "Years of bird watching experience vs Number of tries for each bird";
+        var chart = new google.visualization.ComboChart(document.getElementById('chart-container7'));
+        chart.draw(data, options);
+    }
+</script>
+
+</body>
+</html>

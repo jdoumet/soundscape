@@ -1,0 +1,558 @@
+@font-face {
+    font-family: 'IM FELL DW Pica PRO';
+    src: url(../fonts/IMFeENrm29C.otf);
+}
+
+@font-face {
+    font-family: 'Comic Book';
+    src: url(../fonts/ComicBookBoldItalic.otf);
+}
+
+@font-face {
+    font-family: 'BluuNext';
+    src: url(../fonts/BluuNext-Bold.otf);
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-color: #FBCCBA;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.homepage-background{
+    background: #FBCCBA;
+}
+.first-page{
+    background: #FBCCBA;
+}
+.second-page{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: none;
+    position: relative;
+}
+.third-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.second-page .background{
+    background-repeat: no-repeat;
+    /*background-image: url("../images/BACKGROUND BIRDS.JPG");*/
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.invisible-img{
+    visibility: hidden;
+    height: 100%;
+}
+
+.main-content{
+    width: 60%;
+    margin: 0 auto;
+    min-width: 700px;
+    position: relative;
+    text-align: center;
+}
+.full-width{
+    width: 100%;
+    text-align: center;
+}
+.top-title{
+    width: 60%;
+    margin-top: 100px;
+    max-width: 420px;
+}
+.main-content .title-center{
+    text-align: center;
+}
+
+
+
+.top-title-1{
+    color: #fb5f42;
+    font-size: 1.5em;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+.bottom-description{
+    color: #FFFFFF;
+    font-family: "IM FELL DW Pica PRO";
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+.bottom-logo{
+    opacity: 0.5;
+    width: 80px;
+}
+.homepage-graphic{
+    width: 50%;
+    max-width: 410px;
+    margin: 0 auto;
+    position: relative;
+}
+.homepage-graphic-img{
+    width: 100%;
+    margin-left: -10%;
+}
+
+.start-btn{
+    position: absolute;
+    width: 100px;
+    margin: 0 auto;
+    left: 39%;
+    top: 86%;
+}
+
+.start-btn img{
+    width: 100px;
+}
+#value-input-container{
+    width: 160px;
+    position: absolute;
+    top: 58%;
+    left: calc(50% - 80px);
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+}
+#value-input-container h3{
+    font-family: 'Comic Book';
+    font-weight: lighter;
+    font-size: 20px;
+}
+.input-container input#value-input[type=text]{
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 2px solid #FBCCBA;
+    border-radius: 15px;
+    width: 160px;
+    margin: 0 auto;
+    text-align: center;
+    outline: none;
+    font-size: 18px;
+    font-family: "BluuNext";
+}
+#next-btn{
+    width: 120px;
+    height: 32px;
+    position: absolute;
+    top: calc(58% + 110px);
+    left: calc(50% - 60px);
+    display: none;
+}
+.input-container input#next-btn[type=button]{
+    background-color: #fa6043;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100px;
+    height: 28px;
+
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 50px);
+    outline: none;
+    font-size: 18px;
+    font-family: "BluuNext";
+    display: none;
+}
+
+.rule-box{
+    background-image: url("../images/rule-box-small.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 200px;
+    height: 238px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 55px 10px 50px 20px;
+    display: none;
+}
+.rule-box p{
+    font-family: 'IM FELL DW Pica PRO';
+    font-size: 15px;
+}
+
+#letter-confirm{
+    font-family: "IM FELL DW Pica PRO";
+}
+
+.letter-confirm-content{
+    font-family: "IM FELL DW Pica PRO";
+    font-size: 19px;
+    letter-spacing: 1.5px;
+}
+
+#letter-confirm .modal-body{
+    padding: 20px;
+}
+
+#letter-confirm .modal-footer{
+    padding: 8px;
+}
+
+.letter-container{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -282px;
+    width: 565px;
+    height: 601px;
+}
+.letter-container img{
+    width: 100%;
+}
+#success-message{
+    text-align: center;
+}
+
+
+.second-page-content{
+    position: relative;
+}
+
+.bubbles{
+    width: 70px;
+    height: 40px;
+    position: absolute;
+}
+
+.bubble1{
+    right: 39%;
+    top: 15%;
+}
+.bubble2{
+    right: 31%;
+    top: 36%;
+}
+.bubble3{
+    right: 30%;
+    top: 7%;
+}
+.bubble4{
+    right: 2%;
+    top: 10%;
+}
+.bubble5{
+    right: 35%;
+    top: 44%;
+}
+.bubble6{
+    right: 13%;
+    top: 57%;
+}
+.bubble7{
+    right: 23%;
+    top: 48%;
+}
+.bubble8{
+    right: 8%;
+    top: 35%;
+}
+.birds-front{
+    width: 150px;
+}
+.bird1{
+    left: calc(50% - 470px);
+    bottom: 0;
+}
+.bird2{
+    left: calc(50% - 225px);
+    bottom: 0;
+}
+.bird3{
+    left: calc(50% + 25px);
+    bottom: 0;
+}
+.bird4{
+    left: calc(50% + 275px);
+    bottom: 0;
+}
+
+/*.bird5{
+    left: 5%;
+    top: 55%;
+}
+.bird6{
+    left: 15%;
+    top: 55%;
+}
+.bird7{
+    left: 25%;
+    top: 55%;
+}
+.bird8{
+    left: 35%;
+    top: 55%;
+}*/
+
+.birds-bubbles-container{
+    width: 100%;
+    height: 100%;
+}
+.cards-container{
+    width: 100%;
+    height: 50%;
+    top: 0;
+    position: relative;
+    display: none;
+}
+.card{
+    width: 200px;
+    height: 291px;
+    position: absolute !important;
+}
+.card img{
+    width: 200px;
+    height: 291px;
+}
+
+
+
+#audioVolumeContainer {
+    width: 350px;
+    height: 50px;
+    position: relative;
+    margin: 0 auto;
+    top: 20px;
+    background: url('http://iviewsource.com/exercises/audioslider/images/volume-background.png') no-repeat left top;
+}
+
+#volume {
+    position: absolute;
+    left: 24px;
+    margin: 0 auto;
+    height:15px;
+    width: 300px;
+    background: url('http://iviewsource.com/exercises/audioslider/images/volume-empty.png') no-repeat left top;
+    border: none;
+    outline: none;
+}
+
+#volume .ui-slider-range-min {
+    height:15px;
+    width: 300px;
+    position: absolute;
+    background: url('http://iviewsource.com/exercises/audioslider/images/volume-full.png') no-repeat left top;
+    border: none;
+    outline: none;
+}
+
+#volume .ui-slider-handle {
+    width: 38px;
+    height:39px;
+    background: url('http://iviewsource.com/exercises/audioslider/images/volume-knob.png') no-repeat left top;
+    position: absolute;
+    margin-left: -15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-top: -6px;
+}
+.survey-forms{
+    position: absolute;
+    left: 2px;
+    bottom: 0;
+}
+.survey-forms .panel{
+    margin-bottom: 1px;
+}
+#preliminary-survey{
+    position: absolute;
+    width: 800px;
+    /*height: 850px;*/
+    top: 50px;
+    left: calc(50% - 400px);
+    padding: 15px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    z-index: 999999;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+#preliminary-survey legend{
+    padding: 25px 0 15px 55px;
+    font-size: 25px;
+}
+
+#preliminary-survey .submitSurvey{
+    float: right;
+    margin-right: 150px;
+    margin-top: 30px;
+}
+#preliminary-survey .form-horizontal .form-group{
+    padding-left: 70px;
+}
+
+#preliminary-survey .form-div2{
+    display: none;
+}
+#preliminary-survey .form-div4{
+    display: none;
+}
+#preliminary-survey .form-div6{
+    display: none;
+}
+.next-sequence:hover{
+    cursor: pointer;
+}
+.top-card-label{
+    width: 100%;
+    text-align: center;
+    bottom: 300px;
+    position: absolute;
+    font-family: 'Comic Book';
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.cards-container-1{
+    display: none;
+}
+.acknowledgement-container{
+    position: fixed;
+    right: -330px;
+    top: calc(50% - 185px);
+    padding: 35px 30px;
+    border-radius: 10px;
+    font-family: 'Comic Book';
+    font-size: 17px;
+    font-weight: 100;
+    text-align: center;
+    width: 327px;
+    height: 350px;
+    background: #f5f5f5;
+
+}
+.button-end-container .btn{
+    font-size: 16px;
+    padding: 6px 12px;
+    margin-right: 20px;
+}
+
+.button-end-container{
+    font-family: 'IM FELL DW Pica PRO';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 270px;
+    margin-left: -180px;
+}
+
+
+
+
+div#board {
+    position: relative;
+    width: 1024px;
+    height: 863px;
+    margin: auto;
+    background: url('../images/environment3.jpg') no-repeat;
+    background-size: 1024px 863px;
+}
+div#messageArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(53, 140, 30);
+    font-family: "times new roman";
+    font-style: italic;
+    font-weight: 700;
+}
+
+table {
+    position: absolute;
+    left: 115px;
+    top: 50px;
+    border-spacing: 0px;
+    color: white;
+    height: 1000px;
+}
+td {
+    width: 120px;
+    height: 1000px;}
+.branch1 {
+    background: url('../images/goldfinchhomepage_trans.png')no-repeat;
+    text-align: left;
+    background-size: 80px 120px;
+}
+.branch2 {
+    background: url("../bird2.png")no-repeat center center;
+}
+.branch3 {
+    background: url("../bird3.png")no-repeat center center;
+}
+.flight {
+    background: url("../short-toed.png") no-repeat center center;
+}
+.floor1 {
+    background: url("../hoopoe.png")no-repeat center center;
+}
+tr {
+    height: 95px;}
+
+form.guessForm {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 15px;
+    background-color: rgb(53, 123, 34);
+}
+form.guessForm input {
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+    font-size: 1em;
+}
+.audiojs{
+    display: none;
+}
+
+#tryGuess {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px 15px;
+
+}
+
+.validation-error{
+    display: none;
+    color: #FF0000;
+    text-align: center;
+}
